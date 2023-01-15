@@ -1,9 +1,12 @@
-import './App.css'
+import './components/frame/Frame.scss'
+import FrameGame from './components/frame/FrameGame'
+import FrameSummary from './components/frame/FrameSummary'
 
 export default function App () {
   return (
-    <div className="App">
-      <h1>lorem100</h1>
+    <div className="app-frame">
+      <FrameGame />
+      <FrameSummary />
     </div>
   )
 }
