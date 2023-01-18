@@ -1,12 +1,14 @@
-import './GameButton.scss'
+import { addItem } from '../redux/gamePointsReducer'
+import { useDispatch } from 'react-redux'
 
 interface GameButtonOptions {
   name: string
 }
 
 export default function GameButton ({ name }: GameButtonOptions) {
+  const dispatch = useDispatch()
   const frameButtonText = () => {
-    console.log('frameButtonText', name)
+    dispatch(addItem(name))
   }
 
   return (
