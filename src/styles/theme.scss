@@ -29,6 +29,12 @@ body {
         border-right: 1px solid $color-white;
       }
     }
+
+    &--summary {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
+    }
   }
 
   .frame-title {

@@ -26,6 +26,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
     "indent": ["error", 2, { "SwitchCase": 1 }],
-    "@typescript-eslint/explicit-function-return-type": 'off'
+    "@typescript-eslint/explicit-function-return-type": 'off',
+    "@typescript-eslint/strict-boolean-expressions": 'off',
+    "@typescript-eslint/restrict-plus-operands": 'off'
   }
 }
