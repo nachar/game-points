@@ -71,5 +71,10 @@ export const scoreSlice = createSlice({
 export const { addItem, resetGame } = scoreSlice.actions
 
 export const selectedScoreboard = (state: { score: { scoreboard: any[] } }) => state.score.scoreboard
+export const bonuses = (state: { score: { scoreboard: any[] } }) =>
+  state.score.scoreboard.reduce((accumulator, item) =>
+    (item.bonus) ? accumulator + item.bonus.total : accumulator + 0, 0)
+export const total = (state: { score: { scoreboard: any[] } }) =>
+  state.score.scoreboard.reduce((accumulator, item) => accumulator + item.total, 0)
 
 export default scoreSlice.reducer

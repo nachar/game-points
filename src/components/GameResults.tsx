@@ -1,16 +1,26 @@
-import { useSelector } from 'react-redux'
-import { selectedScoreboard } from '../redux/gamePointsReducer'
+import { useSelector, useDispatch } from 'react-redux'
+import { resetGame, bonuses, total } from '../redux/gamePointsReducer'
 
 export default function GameResults () {
-  const scoreboard = useSelector(selectedScoreboard)
-  const bonuses = scoreboard.reduce((accumulator, item) =>
-    (item.bonus) ? accumulator + item.bonus.total : accumulator + 0, 0)
-  const total = scoreboard.reduce((accumulator, item) => accumulator + item.total, 0)
+  const dispatch = useDispatch()
+  const scoreboardBonuses = useSelector(bonuses)
+  const scoreboardTotal = useSelector(total)
+
+  const newGame = () => {
+    dispatch(resetGame())
+  }
 
   return (
-    <div>
-      <h1>Total: { total + bonuses }</h1>
-      <h2>Bonuses: { bonuses }</h2>
+    <div className="game-results">
+      <h2>Bonuses: { scoreboardBonuses }</h2>
+      <div className="game-results__total">
+        <h1>Total: { scoreboardTotal + scoreboardBonuses }</h1>
+        <button
+          onClick={newGame}
+          className="game-results__total__new-game">
+          New Game
+        </button>
+      </div>
     </div>
   )
 }
