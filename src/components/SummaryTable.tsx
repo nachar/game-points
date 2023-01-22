@@ -36,7 +36,7 @@ export default function SummaryTable () {
     )
   } else {
     return (
-      <p>Please click some elements</p>
+      <p>Please click on any item</p>
     )
   }
 }
